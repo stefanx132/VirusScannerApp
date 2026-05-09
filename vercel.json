@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/proxy-vt/:match*",
+      "destination": "https://www.virustotal.com/api/v3/:match*"
+    }
+  ]
+}

@@ -99,7 +99,8 @@ if (closeChat) closeChat.onclick = () => chatContainer.classList.add('hidden');
 
 // --- 3. ANALIZĂ SECURITATE ȘI FIRESTORE ---
 async function fetchVTReport(analysisId) {
-    const res = await fetch(`https://www.virustotal.com/api/v3/analyses/${analysisId}`, {
+    // MODIFICAT AICI PENTRU PROXY VERCEL
+    const res = await fetch(`/proxy-vt/analyses/${analysisId}`, {
         headers: { 'x-apikey': vtApiKey, 'accept': 'application/json' }
     });
     const data = await res.json();
@@ -168,7 +169,9 @@ if (btnScan) {
 
             const formData = new FormData();
             formData.append('url', urlInput);
-            const response = await fetch('https://www.virustotal.com/api/v3/urls', {
+            
+            // MODIFICAT AICI PENTRU PROXY VERCEL
+            const response = await fetch('/proxy-vt/urls', {
                 method: 'POST',
                 headers: { 'x-apikey': vtApiKey, 'accept': 'application/json' },
                 body: formData
