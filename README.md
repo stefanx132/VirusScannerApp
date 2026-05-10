@@ -2,7 +2,7 @@
 
 ** Link aplicatie vercel: https://virus-scanner-app.vercel.app/
 ** Link aplicatie GitHub: https://github.com/stefanx132/VirusScannerApp
-** Link aplicatie Youtube: https://youtu.be/RFTUDMi00z8
+** Link aplicatie Youtube: https://youtu.be/znCHo72fE7Y
 
 # 1. Introducere
 
