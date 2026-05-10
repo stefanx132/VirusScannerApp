@@ -73,6 +73,40 @@ Cele mai importante trei API-uri care au fost integrate în cadrul aplicației S
 
 Utilizarea API-ului VirusTotal nu costă, însă pentru a primi API key-ul este nevoie de crearea unui cont pe platforma lor. Acest pachet gratuit este limitat la un anumit număr de request-uri pe minut/zi (standard 4 request-uri pe minut, 500 pe zi), aspect gestionat în aplicație prin arhivarea scanărilor în Firestore pentru a evita consumul inutil al cotei. Același lucru se aplică pentru Google Gemini API, unde este necesară crearea unui cont pe Google AI Studio și generarea unui key pentru a realiza procesul de generare a textelor, fiind de asemenea supus limitărilor impuse de varianta gratuită de acces.
 
+# Capturi de ecran
+
+![alt text](img1.png)
+
+Deploy Vercel
+
+![alt text](image.png)
+
+Această captură de ecran ilustrează pagina de pornire a aplicației. Interfața este centrată pe un formular de login minimalist și elegant. Formularul conține câmpuri intuitive pentru introducerea credențialelor (adresă de email și parolă) și un buton principal de acțiune („Conectare”). În partea inferioară a cardului este integrată o legătură rapidă pentru redirecționarea utilizatorilor noi către secțiunea de înregistrare.
+
+![alt text](image-1.png)
+
+Această imagine prezintă interfața principală a aplicației, unde în centrul ecranului este evidențiată funcționalitatea de bază: un formular unde utilizatorul poate introduce o adresă URL pentru verificarea integrității prin intermediul motorului VirusTotal, acționat de butonul „Inițiază Analiza”. Sub acest formular se află un buton rapid pentru accesarea istoricului („Vezi Arhiva de Scanări”), iar în colțul din dreapta-jos este vizibil butonul care deschide conversația cu asistentul virtual.
+
+![alt text](image-2.png)
+
+Această captură de ecran ilustrează fereastra dedicată istoricului de scanări, o componentă esențială alimentată de baza de date Firestore. Interfața afișează o listă structurată și ordonată cronologic a tuturor adreselor URL verificate anterior de utilizatorul curent. Pentru fiecare intrare din arhivă, sistemul prezintă detalii complete: adresa web (URL-ul), data și ora exactă a scanării, alături de statisticile specifice preluate de la VirusTotal (numărul de detecții maliciose, suspecte și sigure). Gradul de risc al fiecărei resurse este evidențiat vizual prin etichete de status colorate intuitiv — roșu pentru „MALIȚIOS” și verde pentru „SIGUR” — permițând utilizatorului o evaluare vizuală rapidă a întregii sale activități de monitorizare.
+
+![alt text](image-3.png)
+
+Această captură de ecran ilustrează modul în care sistemul procesează o adresă web în timp real. După inițierea comenzii, interfața oferă feedback vizual imediat utilizatorului: butonul principal își schimbă starea în „Procesare...”, iar în secțiunea inferioară este afișat un indicator dinamic de progres. Acest element informează utilizatorul cu privire la stadiul interogării către API-ul VirusTotal (în acest caz, „etapa 3 din 10”), oferind o estimare clară și transparentă a timpului rămas până la finalizarea analizei și afișarea raportului de securitate.
+
+![alt text](image-4.png)
+
+Această captură de ecran prezintă modul în care aplicația raportează un rezultat critic în urma verificării unei adrese URL. Sistemul afișează o alertă vizuală de securitate imediată, marcată distinct cu roșu și mesajul „AMENINȚARE DETECTATĂ”, avertizând utilizatorul că resursa este potențial periculoasă. În secțiunea dedicată, sunt prezentate clar statisticile exacte returnate de motoarele antivirus. De asemenea, eticheta violet „SCANARE ÎN TIMP REAL” confirmă faptul că analiza nu a fost extrasă din arhiva locală, ci a fost efectuată prin interogarea API-ului VirusTotal, asigurând astfel actualitatea și precizia datelor furnizate.
+
+![alt text](image-5.png)
+
+Această captură de ecran ilustrează integrarea asistentului virtual bazat pe inteligența artificială direct în panoul de control al aplicației. Fereastra de chat, deschisă în partea dreaptă a ecranului facilitează o interacțiune conversațională în timp real. Această componentă extinde semnificativ utilitatea platformei dincolo de simpla scanare a resurselor, transformând-o într-un instrument interactiv de suport și educare continuă a utilizatorului în domeniul securității cibernetice.
+
+![alt text](image-6.png)
+
+Această captură prezintă baza de date în cloud a aplicației (Firebase Firestore). Imaginea arată colecția unde sunt salvate automat toate verificările. Fiecare document stochează statusul de risc, data scanării, email-ul utilizatorului și statisticile preluate de la VirusTotal, asigurând astfel un istoric rapid și eficientizarea resurselor.
+
 # 5. Concluzii
 
 Din perspectiva mea, proiectul "VirusScanner App" bazat pe cloud computing reprezintă o soluție inovatoare și utilă pentru a aduce instrumentele avansate de securitate (Threat Intelligence) într-o formă accesibilă și prietenoasă utilizatorilor de rând. Prin integrarea serviciilor în cloud și utilizarea unor tehnologii moderne, proiectul oferă o experiență fluidă și eficientă utilizatorilor săi, protejându-i de potențiale amenințări informatice.
